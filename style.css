@@ -40,32 +40,45 @@ header h1 {
     box-sizing: border-box;
 }
 
-.alphabet {
+/* Tabs styling */
+.alphabet-tabs {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-bottom: 20px;
+    background: #e7e7e7;
+    border-radius: 4px;
+    padding: 5px;
 }
 
-.alphabet a {
-    padding: 5px 10px;
-    text-decoration: none;
-    color: #333;
-    background-color: #e7e7e7;
+.alphabet-tabs button {
+    padding: 10px 15px;
     margin: 2px;
-    border-radius: 3px;
+    border: none;
+    background: transparent;
+    color: #333;
+    cursor: pointer;
+    border-radius: 4px;
     font-size: 0.9em;
+    transition: background-color 0.3s;
 }
 
-.alphabet a:hover {
+.alphabet-tabs button[aria-selected="true"] {
+    background-color: #4a86e8;
+    color: white;
+    font-weight: bold;
+}
+
+.alphabet-tabs button:hover {
     background-color: #ddd;
 }
 
-.dictionary {
+.tab-panel {
+    display: none;
     padding: 20px;
 }
 
-.dictionary h2 {
+.tab-panel h2 {
     border-bottom: 1px solid #ddd;
     padding-bottom: 10px;
     margin-top: 20px;
@@ -85,10 +98,9 @@ header h1 {
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
-.word strong {
+.word h3 {
     font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
+    margin: 0;
 }
 
 .word ol {
@@ -96,13 +108,13 @@ header h1 {
     margin: 0;
 }
 
-.cross-reference, .synonym {
+.synonym, .cross-reference {
     color: #0077cc;
     text-decoration: underline;
     cursor: pointer;
 }
 
-.cross-reference:hover, .synonym:hover {
+.synonym:hover, .cross-reference:hover {
     color: #0055aa;
 }
 
@@ -131,12 +143,12 @@ header h1 {
         font-size: 16px;
     }
     
-    .alphabet a {
+    .alphabet-tabs button {
         font-size: 0.8em;
-        padding: 4px 8px;
+        padding: 8px 12px;
     }
     
-    .dictionary h2 {
+    .tab-panel h2 {
         font-size: 1.2em;
     }
     
@@ -150,12 +162,12 @@ header h1 {
         font-size: 1.2em;
     }
     
-    .alphabet a {
+    .alphabet-tabs button {
         font-size: 0.7em;
-        padding: 3px 6px;
+        padding: 6px 10px;
     }
     
-    .dictionary h2 {
+    .tab-panel h2 {
         font-size: 1em;
     }
     
