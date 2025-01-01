@@ -1,153 +1,199 @@
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background: #f4f4f9;
-    color: #333;
-    transition: background 0.3s, color 0.3s;
-}
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Türkçe Sözlük</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Türkçe Sözlük</h1>
+        <p>Kelimelere alfabetik olarak göz atın ya da arama yapın</p>
+    </header>
 
-body.dark-mode {
-    background: #333;
-    color: #f4f4f9;
-}
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Bir kelime arayın...">
+        </div>
 
-header {
-    background-color: #4a86e8;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-}
+        <div class="alphabet" id="alphabet"></div>
 
-header h1 {
-    margin: 0;
-    font-size: 1.5em; /* Smaller on mobile */
-}
+        <div class="dictionary">
+            <div id="letter-A">
+                <h2>A</h2>
+                <div class="word">
+                    <strong>araba</strong> (عربا)
+                    <ol>
+                        <li>İnsanların ya da yüklerin taşınması için kullanılan kara taşıtı.</li>
+                        <li>Genellikle motorlu, tekerlekli bir ulaşım aracı.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">otomobil</span>, <span class="synonym">taşıt</span>, <span class="synonym">araç</span>. Bkz: <a href="#letter-M" class="cross-reference">motor</a></em>
+                </div>
+                <div class="word">
+                    <strong>ağaç</strong> (آغاج)
+                    <ol>
+                        <li>Kök, gövde, dallar ve yapraklardan oluşan bitki.</li>
+                        <li>Ahşap malzeme sağlayan büyük bitki.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">bitki</span>, <span class="synonym">ağacık</span>. Bkz: <a href="#letter-M" class="cross-reference">meyve</a></em>
+                </div>
+                <div class="word">
+                    <strong>anne</strong> (آنّه)
+                    <ol>
+                        <li>Çocuk doğuran kadın.</li>
+                        <li>Çocuklarını yetiştiren, ona bakan kadın.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">ana</span>, <span class="synonym">valide</span>. Bkz: <a href="#letter-B" class="cross-reference">baba</a></em>
+                </div>
+                <div class="word">
+                    <strong>ankara</strong> (آنقره)
+                    <ol>
+                        <li>Türkiye'nin başkenti.</li>
+                        <li>İç Anadolu Bölgesi'nde bulunan önemli bir şehir.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">başkent</span>. Bkz: <a href="#letter-S" class="cross-reference">şehir</a></em>
+                </div>
+            </div>
+            <div id="letter-B">
+                <h2>B</h2>
+                <div class="word">
+                    <strong>balık</strong> (بالق)
+                    <ol>
+                        <li>Suda yaşayan pullu omurgalı canlı.</li>
+                        <li>Besin olarak tüketilen su canlısı.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">balıkhane</span>. Bkz: <a href="#letter-D" class="cross-reference">deniz</a></em>
+                </div>
+                <div class="word">
+                    <strong>bardak</strong> (بَردَك)
+                    <ol>
+                        <li>Sıvı içmek için kullanılan cam ya da plastik kap.</li>
+                        <li>Bir ölçü birimi olarak kullanılan kap.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">kadeh</span>, <span class="synonym">fincan</span>. Bkz: <a href="#letter-S" class="cross-reference">su</a></em>
+                </div>
+                <div class="word">
+                    <strong>baba</strong> (بابا)
+                    <ol>
+                        <li>Çocukların babası olan erkek.</li>
+                        <li>Erkek ebeveyn.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">peder</span>, <span class="synonym">ata</span>. Bkz: <a href="#letter-A" class="cross-reference">anne</a></em>
+                </div>
+                <div class="word">
+                    <strong>bahçe</strong> (بەهجە)
+                    <ol>
+                        <li>Bitişik veya açık alanda bitkilerin yetiştirildiği yer.</li>
+                        <li>Ev ya da bina etrafındaki yeşil alan.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">tarla</span>, <span class="synonym">park</span>. Bkz: <a href="#letter-Ç" class="cross-reference">çiçek</a></em>
+                </div>
+                <div class="word">
+                    <strong>boya</strong> (بويا)
+                    <ol>
+                        <li>Yüzeyleri renklendirmek veya korumak için kullanılan madde.</li>
+                        <li>Resim yapmak için kullanılan renkli sıvı.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">renk</span>, <span class="synonym">boya maddesi</span>. Bkz: <a href="#letter-R" class="cross-reference">resim</a></em>
+                </div>
+            </div>
+            <div id="letter-Ç">
+                <h2>Ç</h2>
+                <div class="word">
+                    <strong>çiçek</strong> (چچك)
+                    <ol>
+                        <li>Bitkilerin üreme organını içeren, genellikle renkli ve hoş kokulu yapı.</li>
+                        <li>Süs bitkisi olarak yetiştirilen bitki kısmı.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">gül</span>, <span class="synonym">çiçekçik</span>. Bkz: <a href="#letter-B" class="cross-reference">bahçe</a></em>
+                </div>
+                <div class="word">
+                    <strong>çanta</strong> (چانتا)
+                    <ol>
+                        <li>Eşyaları taşımak için kullanılan kumaş veya deri torba.</li>
+                        <li>Okul veya iş için kullanılan taşıma aracı.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">torba</span>, <span class="synonym">valiz</span>. Bkz: <a href="#letter-E" class="cross-reference">eşya</a></em>
+                </div>
+            </div>
+            <div id="letter-D">
+                <h2>D</h2>
+                <div class="word">
+                    <strong>deniz</strong> (دەنیز)
+                    <ol>
+                        <li>Büyük su kütlesi.</li>
+                        <li>Okyanusun bir parçası veya büyük bir göl.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">okyanus</span>, <span class="synonym">göl</span>. Bkz: <a href="#letter-B" class="cross-reference">balık</a></em>
+                </div>
+                <div class="word">
+                    <strong>dağ</strong> (داغ)
+                    <ol>
+                        <li>Yeryüzünden yüksekçe yükselen doğal yapı.</li>
+                        <li>Çoğunlukla kaya ve topraktan oluşan büyük tepe.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">tepe</span>, <span class="synonym">zirve</span>. Bkz: <a href="#letter-T" class="cross-reference">tırmanış</a></em>
+                </div>
+            </div>
+            <div id="letter-M">
+                <h2>M</h2>
+                <div class="word">
+                    <strong>motor</strong> (موتور)
+                    <ol>
+                        <li>Taşıtların hareketini sağlayan içten yanmalı makine.</li>
+                        <li>Enerjiyi hareket enerjisine dönüştüren aygıt.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">makine</span>, <span class="synonym">motorcu</span>. Bkz: <a href="#letter-A" class="cross-reference">araba</a></em>
+                </div>
+                <div class="word">
+                    <strong>meyve</strong> (مەیوە)
+                    <ol>
+                        <li>Ağaçların veya bitkilerin ürettiği yenilebilir kısım.</li>
+                        <li>Çoğunlukla tatlı veya ekşi olan bitki ürünü.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">sebze</span> (not exact but related). Bkz: <a href="#letter-A" class="cross-reference">ağaç</a></em>
+                </div>
+                <div class="word">
+                    <strong>masa</strong> (مایسا)
+                    <ol>
+                        <li>Üzerinde çalışmak, yemek yemek veya nesneleri koymak için kullanılan düz yüzey.</li>
+                        <li>Bir işlev için yükseltilmiş platform.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">tezgah</span>, <span class="synonym">masaüstü</span>. Bkz: <a href="#letter-S" class="cross-reference">sandalye</a></em>
+                </div>
+            </div>
+            <div id="letter-S">
+                <h2>S</h2>
+                <div class="word">
+                    <strong>su</strong> (سو)
+                    <ol>
+                        <li>Sıvı, yaşam için gerekli olan element.</li>
+                        <li>Doğada sıvı, buz veya buhar olarak bulunan bileşik.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">sıvı</span>. Bkz: <a href="#letter-B" class="cross-reference">bardak</a></em>
+                </div>
+                <div class="word">
+                    <strong>sandalye</strong> (سانداليە)
+                    <ol>
+                        <li>Oturma amaçlı kullanılan, genellikle sırt desteği olan mobilya.</li>
+                        <li>Masa veya çalışma alanında kullanılan oturma birimi.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">koltuk</span>, <span class="synonym">tabure</span>. Bkz: <a href="#letter-M" class="cross-reference">masa</a></em>
+                </div>
+                <div class="word">
+                    <strong>şehir</strong> (شەهیر)
+                    <ol>
+                        <li>Büyük nüfusa sahip yerleşim yeri.</li>
+                        <li>Belediye hizmetleri verilen, idari yapılanma içindeki bölge.</li>
+                    </ol>
+                    <em>Syn: <span class="synonym">kent</span>, <span class="synonym">metropol</span>. Bkz: <a href="#letter-A" class="cross-reference">Ankara</a></em>
+                </div>
+            </div>
+        </div>
+    </div>
 
-.container {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-.search-bar input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box; /* Include padding in width */
-}
-.synonym {
-    color: #0077cc;
-    text-decoration: underline;
-    cursor: pointer;
-}
-
-.synonym:hover {
-    color: #0055aa;
-}
-.alphabet {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-bottom: 20px;
-}
-
-.alphabet a {
-    padding: 5px 10px;
-    text-decoration: none;
-    color: #333;
-    background-color: #e7e7e7;
-    margin: 2px;
-    border-radius: 3px;
-    font-size: 0.9em; /* Smaller on mobile */
-}
-
-.alphabet a:hover {
-    background-color: #ddd;
-}
-
-.dictionary {
-    padding: 20px;
-}
-
-.dictionary h2 {
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 10px;
-    margin-top: 20px;
-}
-
-.word {
-    margin-bottom: 10px;
-    font-size: 0.9em; /* Smaller on mobile */
-}
-
-.word strong {
-    font-weight: bold;
-}
-
-.theme-toggle {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: none;
-    border: none;
-    font-size: 24px;
-    cursor: pointer;
-    z-index: 1000; /* Ensure visibility over other elements */
-}
-
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    header {
-        padding: 0.5rem;
-    }
-    
-    .container {
-        padding: 10px;
-    }
-    
-    .search-bar input {
-        font-size: 16px;
-    }
-    
-    .alphabet a {
-        font-size: 0.8em;
-        padding: 4px 8px;
-    }
-    
-    .dictionary h2 {
-        font-size: 1.2em;
-    }
-    
-    .word {
-        font-size: 0.8em;
-    }
-}
-
-@media (max-width: 480px) {
-    header h1 {
-        font-size: 1.2em;
-    }
-    
-    .alphabet a {
-        font-size: 0.7em;
-        padding: 3px 6px;
-    }
-    
-    .dictionary h2 {
-        font-size: 1em;
-    }
-    
-    .word {
-        font-size: 0.7em;
-    }
-    
-    .theme-toggle {
-        font-size: 20px;
-        bottom: 10px;
-        right: 10px;
-    }
-}
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    <script src="script.js"></script>
+</body>
+</html>
