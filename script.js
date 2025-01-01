@@ -6,49 +6,71 @@ const turkishAlphabet = [
 ];
 
 // DOM elements
-const alphabetNav = document.getElementById('alphabet');
+const alphabetTabs = document.getElementById('alphabetTabs');
 const searchInput = document.getElementById('searchInput');
 const dictionary = document.querySelector('.dictionary');
+const tabContent = document.getElementById('tabContent');
 
-// Populate alphabet navigation
-function populateAlphabetNav() {
-    if (alphabetNav) {
-        alphabetNav.innerHTML = turkishAlphabet
-            .map(letter => `<a href="#letter-${letter}" aria-label="Go to letter ${letter}">${letter}</a>`)
+// Populate alphabet navigation with tabs
+function populateAlphabetTabs() {
+    if (alphabetTabs) {
+        alphabetTabs.innerHTML = turkishAlphabet
+            .map(letter => `<button id="tab-${letter}" role="tab" aria-selected="false" aria-controls="letter-${letter}">${letter}</button>`)
             .join('');
     }
 
-    // Add click event listeners for smooth scrolling
-    const alphabetLinks = alphabetNav.querySelectorAll('a');
-    alphabetLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            e.preventDefault();
-            const target = document.querySelector(link.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+    // Set the first tab as active
+    if (alphabetTabs.children.length > 0) {
+        alphabetTabs.children[0].setAttribute('aria-selected', 'true');
+        document.getElementById('letter-A').style.display = 'block';
+    }
+
+    // Add click event listeners for tab switching
+    const tabButtons = alphabetTabs.querySelectorAll('button');
+    tabButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            const letter = e.target.id.replace('tab-', '');
+            showTab(letter);
         });
     });
+}
+
+// Function to show the selected tab
+function showTab(letter) {
+    // Hide all tab panels
+    const tabPanels = document.querySelectorAll('.tab-panel');
+    tabPanels.forEach(panel => panel.style.display = 'none');
+
+    // Show the selected tab panel
+    const selectedPanel = document.getElementById(`letter-${letter}`);
+    if (selectedPanel) {
+        selectedPanel.style.display = 'block';
+    }
+
+    // Update aria-selected attributes for tabs
+    const tabs = alphabetTabs.querySelectorAll('button');
+    tabs.forEach(tab => {
+        tab.setAttribute('aria-selected', tab.id === `tab-${letter}` ? 'true' : 'false');
+    });
+
+    // Clear search when changing tabs
+    if (searchInput) {
+        searchInput.value = '';
+        searchWord(); // This will show all words for the new tab
+    }
 }
 
 // Search functionality
 function searchWord() {
     const query = searchInput.value.toLowerCase();
-    const words = dictionary.querySelectorAll('.word');
-    
-    words.forEach(word => {
-        const wordText = word.querySelector('h3').textContent.toLowerCase();
-        if (wordText.includes(query)) {
-            word.style.display = '';
-        } else {
-            word.style.display = 'none';
-        }
-    });
-}
-
-// Event listeners
-if (searchInput) {
-    searchInput.addEventListener('input', searchWord);
+    const currentTab = document.querySelector('.tab-panel[style="display: block;"]');
+    if (currentTab) {
+        const words = currentTab.querySelectorAll('.word');
+        words.forEach(word => {
+            const wordText = word.querySelector('h3').textContent.toLowerCase();
+            word.style.display = wordText.includes(query) ? '' : 'none';
+        });
+    }
 }
 
 // Theme toggle
@@ -62,5 +84,8 @@ if (themeToggle) {
 
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
-    populateAlphabetNav();
+    populateAlphabetTabs();
+    if (searchInput) {
+        searchInput.addEventListener('input', searchWord);
+    }
 });
