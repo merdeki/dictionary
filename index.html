@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Türkçe Sözlük</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Türkçe Sözlük</h1>
+        <p>Kelimelere alfabetik olarak göz atın ya da arama yapın</p>
+    </header>
+
+    <div class="container">
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Bir kelime arayın...">
+        </div>
+
+        <div class="alphabet" id="alphabet"></div>
+
+        <div class="dictionary">
+            <div id="letter-A">
+                <h2>A</h2>
+                <div class="word">
+                    <strong>Araba</strong> (عربا) - İnsanların ya da yüklerin taşınması için kullanılan kara taşıtı.
+                </div>
+                <div class="word">
+                    <strong>Ağaç</strong> (آغاج) - Kök, gövde, dallar ve yapraklardan oluşan bitki.
+                </div>
+            </div>
+            <div id="letter-B">
+                <h2>B</h2>
+                <div class="word">
+                    <strong>Balık</strong> (بالق) - Suda yaşayan pullu omurgalı canlı.
+                </div>
+                <div class="word">
+                    <strong>Bardak</strong> (بَردَك) - Sıvı içmek için kullanılan cam ya da plastik kap.
+                </div>
+            </div>
+            <div id="letter-Ç">
+                <h2>Ç</h2>
+                <div class="word">
+                    <strong>Çiçek</strong> (چچك) - Bitkilerin üreme organını içeren, genellikle renkli ve hoş kokulu yapı.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    <script src="script.js"></script>
+</body>
+</html>
