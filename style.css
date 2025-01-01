@@ -1,0 +1,145 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #f4f4f9;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode {
+    background: #333;
+    color: #f4f4f9;
+}
+
+header {
+    background-color: #4a86e8;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em; /* Smaller on mobile */
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* Include padding in width */
+}
+
+.alphabet {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.alphabet a {
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    background-color: #e7e7e7;
+    margin: 2px;
+    border-radius: 3px;
+    font-size: 0.9em; /* Smaller on mobile */
+}
+
+.alphabet a:hover {
+    background-color: #ddd;
+}
+
+.dictionary {
+    padding: 20px;
+}
+
+.dictionary h2 {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-top: 20px;
+}
+
+.word {
+    margin-bottom: 10px;
+    font-size: 0.9em; /* Smaller on mobile */
+}
+
+.word strong {
+    font-weight: bold;
+}
+
+.theme-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000; /* Ensure visibility over other elements */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    header {
+        padding: 0.5rem;
+    }
+    
+    .container {
+        padding: 10px;
+    }
+    
+    .search-bar input {
+        font-size: 16px;
+    }
+    
+    .alphabet a {
+        font-size: 0.8em;
+        padding: 4px 8px;
+    }
+    
+    .dictionary h2 {
+        font-size: 1.2em;
+    }
+    
+    .word {
+        font-size: 0.8em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.2em;
+    }
+    
+    .alphabet a {
+        font-size: 0.7em;
+        padding: 3px 6px;
+    }
+    
+    .dictionary h2 {
+        font-size: 1em;
+    }
+    
+    .word {
+        font-size: 0.7em;
+    }
+    
+    .theme-toggle {
+        font-size: 20px;
+        bottom: 10px;
+        right: 10px;
+    }
+}
