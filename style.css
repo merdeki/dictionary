@@ -39,7 +39,15 @@ header h1 {
     border-radius: 4px;
     box-sizing: border-box; /* Include padding in width */
 }
+.synonym {
+    color: #0077cc;
+    text-decoration: underline;
+    cursor: pointer;
+}
 
+.synonym:hover {
+    color: #0055aa;
+}
 .alphabet {
     display: flex;
     flex-wrap: wrap;
